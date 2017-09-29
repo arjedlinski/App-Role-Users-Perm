@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule \.(php)$ - [F]
+#RewriteRule   ^createuser/?$ /includes/users.php
+#RewriteRule	  ^clients/?$	/includes/clients.php
+#RewriteRule	  ^users/?$	/includes/user-list.php
+#RewriteRule	  ^newuser/?$	/includes/new-user.php
+#RewriteRule	  ^admin-settings/?$	/includes/admin/settings.php
+#RewriteRule   ^edit/([^/]*)/([^/]*)$ /includes/edit.php?id=$1&type=$2 [L]
+#RewriteRule   ^signIn/?$	/content/newaccount.php
+#RewriteRule   ^register/?$	/content/register.php
+RewriteRule   ^(^.*) index.php?url=$1 [L,QSA]
+Options All -Indexes
+ErrorDocument 404 /no-permission.php
+ErrorDocument 403 /no-permission.php
+
+
